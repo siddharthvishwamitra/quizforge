@@ -1,0 +1,20 @@
+# Enable Rewrite Engine
+RewriteEngine on
+
+# Prevent hotlinking - Allow only wastatus.in (with and without www)
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?khaki-locust-471148\.hostingersite.com [NC]
+RewriteCond %{HTTP_REFERER} !^$
+RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F]
+
+# Block direct access to image files
+<FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+  Require all denied
+</FilesMatch>
+
+# Allow access only when used within wastatus.in (with and without www)
+<If "%{HTTP_REFERER} =~ m#^https?://(www\.)?khaki-locust-471148\.hostingersite.com#">
+  Require all granted
+</If>
+
+# Block directory listing
+Options -Indexes

@@ -1,0 +1,30 @@
+# Deny Direct Access to these files
+
+<Files .htaccess>
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+<Files "staff/config.php">
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW ERRORPAGEID:KqqOWCtsqo
+ErrorDocument 404 /404.html
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE KqqOWCtsqo:ERRORPAGEID
+
+RewriteEngine On
+
+# Allow access to existing files and folders (CSS, JS, images, etc.)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Remove .php extension for all pages (internally, not changing the URL)
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/.]+)$ $1.php [L]
+
+# Embedding disabled for other domains
+
+Header always set X-Frame-Options "SAMEORIGIN"
