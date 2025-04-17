@@ -134,22 +134,22 @@ if (isset($_SESSION['submitted_data'])) {
     <form method="POST" enctype="multipart/form-data">
       <input type="hidden" name="form_token" value="<?php echo $_SESSION['form_token']; ?>">
       <input type="text" name="aadhar_card" pattern="[0-9]{12}" maxlength="12" placeholder="Aadhar Card Number" required>
-      <input type="text" pattern="[A-Za-z ]{3,50}" maxlength="50" name="full_name" placeholder="Full Name" required>
-      <input type="text" pattern="[A-Za-z ]{3,50}" maxlength="50" name="father_name" placeholder="Father's Name" required>
+      <input type="text" pattern="[A-Za-z ]{3,50}" maxlength="50" name="full_name" placeholder="Full Name" oninput="capitalizeWords(this)" required>
+      <input type="text" pattern="[A-Za-z ]{3,50}" maxlength="50" name="father_name" placeholder="Father's Name" oninput="capitalizeWords(this)" required>
       <input type="date" value="2002-02-01" min="1990-02-01" max="2021-02-01" name="dob" required>
       <select name="gender" required>
         <option value="" disabled selected>Select Gender</option>
         <option value="1">Male</option>
         <option value="2">Female</option>
       </select>
-      <input type="text" name="school_name" placeholder="School Name" required>
+      <input type="text" name="school_name" maxlength="40" placeholder="School Name" oninput="uppercaseText(this)" required>
       <select name="level" required>
         <option value="" disabled selected>Select Level</option>
         <option value="1">Junior</option>
         <option value="2">Senior</option>
       </select>
       <input type="tel" pattern="[0-9]{10}" maxlength="10" name="phone" placeholder="Phone" required>
-      <textarea name="address" placeholder="Address" maxlength="50" minlength="5" style="height:100px;" required></textarea>
+      <textarea name="address" placeholder="Address" maxlength="50" minlength="5" oninput="uppercaseText(this)" style="height:100px;" required></textarea>
       <input type="file" id="image" name="image" accept=".jpg,.jpeg,.png,.webp" required>
       <img id="imagePreview" style="display:none;width:128px;height:128px;border:1px solid #ccc;margin:10px 0;">
       <div id="fileError" style="color:red;"></div>
@@ -170,6 +170,18 @@ if (isset($_SESSION['submitted_data'])) {
   <?php endif; ?>
 </div>
 <?php include 'part/footer.php'; ?>
+<script>
+function capitalizeWords(input) {
+    input.value = input.value
+      .toLowerCase()
+      .replace(/\b\w/g, char => char.toUpperCase());
+  }
+</script>
+<script>
+function uppercaseText(input) {
+    input.value = input.value.toUpperCase();
+}
+</script>
 <script>
 document.getElementById('image').addEventListener('change', function(event) {
     const file = event.target.files[0];
