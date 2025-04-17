@@ -68,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <style>
         body{background-color:#f4f4f4;margin:0;padding:20px;text-align:center}.container{max-width:600px;margin:auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 0 4px rgba(0,0,0,0.1)}h2{color:#6610f2}label{font-size:16px;margin-bottom:5px}input[type="text"],input[type="date"]{width:100%;padding:10px;margin:10px 0;border:1px solid #ccc;border-radius:4px;background:#fff}.captcha-container{margin:0;text-align:center}.captcha { font-size: 24px; font-weight: bold; letter-spacing: 3px; background: #ddd; padding: 10px; display: inline-block; margin-top: 5px; }.captcha-input{padding:8px;margin-top:5px;width:60%;border:1px solid #ccc;border-radius:4px}.button{padding:12px;background-color:#6610f2;color:white;border:none;border-radius:4px;cursor:pointer;width:100%}.button:hover{background-color:#5208c5}.error-message{color:red;text-align:center}.result-table{margin-top:20px;width:100%;border-collapse:collapse}.result-table th,.result-table td{padding:10px;border:1px solid #ddd;text-align:left}.result-table th{background-color:#6610f2;color:white}.result-table td{background-color:#f9f9f9}.print-btn{width:100%;margin-top:20px;padding:10px 20px;background-color:#28a745;color:white;border:none;border-radius:4px;cursor:pointer}.print-btn:hover{background-color:#218838}.disabled-message{color: red;font-weight:bold;}@media print{body{background-color:white}.container{box-shadow:none;border-radius:0;width:100%;padding:0}.print-btn{display:none;}}
         @media print{form{display:none!important;}}
+        .result-container{max-width:600px;margin:0 auto;}
     </style>
 </head>
 <body>
@@ -100,9 +101,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <button type="submit" class="button">Search</button>
             </form>
-
+</div>
             <?php if (isset($student)) { ?>
                 <!-- Show Student Data (Excluding Photo) -->
+                <div class="result-container">
                 <table class="result-table">
                     <tr>
                         <th>Reg No</th>
@@ -146,7 +148,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <button class="print-btn" onclick="window.print();">Print Registration</button>
             <?php } ?>
         <?php } ?>
-    </div>
-
+</div>
 </body>
 </html>
