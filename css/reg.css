@@ -40,6 +40,32 @@ body {
 	resize: none;
 }
 
+/* Custom Input */
+input[type="file"] {
+  font-family: "Outfit", sans-serif;
+  color: #444;
+}
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+input[type="file"]::file-selector-button {
+  visibility: hidden;
+}
+input[type="file"]::before {
+  content: 'Select File';
+  display: inline-block;
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-family: "Outfit", sans-serif;
+  color: #333;
+  cursor: pointer;
+}
+input[type="file"]:hover::before {
+  background-color: #ddd;
+}
+
 .form-container form button {
 	background-color: #4CAF50;
 	color: white;
