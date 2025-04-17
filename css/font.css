@@ -1,6 +1,66 @@
+/*
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 * {
     box-sizing: border-box;
     font-family: "IBM Plex Sans", serif;
+}
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*, html, body {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+/* Headings */
+h1 {
+  font-weight: 700;
+}
+h2 {
+  font-weight: 600;
+}
+h3 {
+  font-weight: 600;
+}
+h4 {
+  font-weight: 500;
+}
+h5 {
+  font-weight: 500;
+}
+h6 {
+  font-weight: 500;
+}
+
+/* Body Text */
+p, span, div, li, dd, dt, address, figcaption, label {
+  font-weight: 400;
+}
+
+/* Emphasis */
+small {
+  font-weight: 300;
+}
+strong, b {
+  font-weight: 600;
+}
+em, i {
+  font-style: italic;
+}
+
+/* Forms */
+button, input, textarea, select, option {
+  font-family: inherit;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Code Blocks */
+pre, code, kbd, samp {
+  font-family: "Outfit", monospace;
+  font-weight: 400;
 }
