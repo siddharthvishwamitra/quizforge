@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['ajax'])) {
 <div id="error-message" class="error-message" style="display: none;"><?php echo $error_message; ?></div>
 
 <form method="GET" class="search-form">
-    <input type="text" name="search" placeholder="Search by name, roll number or reg no" value="<?php echo htmlspecialchars($search); ?>">
+    <input type="text" name="search" placeholder="Search by name, roll number or reg no" value="<?php echo htmlspecialchars($search); ?>" required>
     <button type="submit">Search</button>
 </form>
 
@@ -330,43 +330,31 @@ h2 {
 
 /* Special td.inline behavior */
 td.inline {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
-    height: 100%;
-    box-sizing: border-box;
+    white-space: nowrap;
+    width: 1%;
+    vertical-align: middle;
 }
 
 td.inline select,
-td.inline button,
-td.inline input {
-    flex: 1;
+td.inline input,
+td.inline button {
+    display: inline-block;
+    width: 30%;
     min-width: 70px;
+    max-width: 100px;
+    box-sizing: border-box;
+    margin-right: 4px;
+}
+
+td.inline button {
+   padding: 6px;
 }
 
 @media (max-width: 768px) {
     table {
         font-size: 12px;
     }
-
-    td.inline {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: stretch;
-        min-height: 100%;
-        gap: 5px;
-    }
-
-    td.inline select,
-    td.inline button,
-    td.inline input {
-        min-width: 40px;
-        flex: 1;
-        font-size: 12px;
-    }
 }
-
 </style>
 </body>
 </html>

@@ -233,7 +233,7 @@ if (isset($_POST['delete_id'])) {
         <!-- Search Form -->
         <div class="search-box">
             <form method="GET" action="">
-                <input type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Search by Reg No, Name, Aadhaar No or Phone">
+                <input type="text" name="search" value="<?php echo htmlspecialchars($search); ?>" placeholder="Search by Reg No, Name, Aadhaar No or Phone" required>
                 <button type="submit">Search</button>
             </form>
         </div>
