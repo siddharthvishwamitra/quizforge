@@ -14,7 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
         'registration_status' => ['open', 'closed'],
         'admit_card_status' => ['enabled', 'disabled'],
         'result_status' => ['enabled', 'disabled'],
-        'reg_print' => ['enabled', 'disabled']
+        'reg_print' => ['enabled', 'disabled'],
+        'gen_roll_number' => ['enabled', 'disabled']
     ];
 
     $errors = [];
@@ -46,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
 
 // Fetch current settings
 $settings = [];
-$setting_names = ['registration_status', 'admit_card_status', 'result_status', 'reg_print'];
+$setting_names = ['registration_status', 'admit_card_status', 'result_status', 'reg_print', 'gen_roll_number'];
 
 foreach ($setting_names as $name) {
     $query = "SELECT setting_value FROM system_settings WHERE setting_name = ?";
@@ -149,6 +150,12 @@ foreach ($setting_names as $name) {
             <select name="reg_print" id="reg_print" required>
                 <option value="enabled" <?php echo ($settings['reg_print'] == 'enabled') ? 'selected' : ''; ?>>Enabled</option>
                 <option value="disabled" <?php echo ($settings['reg_print'] == 'disabled') ? 'selected' : ''; ?>>Disabled</option>
+            </select>
+            
+            <label for="gen_roll_number">Assign Roll Numbers:</label>
+            <select name="gen_roll_number" id="gen_roll_number" required>
+                <option value="enabled" <?php echo ($settings['gen_roll_number'] == 'enabled') ? 'selected' : ''; ?>>Enabled</option>
+                <option value="disabled" <?php echo ($settings['gen_roll_number'] == 'disabled') ? 'selected' : ''; ?>>Disabled</option>
             </select>
 
             <label for="admit_card_status">Admit Card Status:</label>
