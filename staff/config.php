@@ -1,8 +1,8 @@
 <?php
-$servername = "auth-db1339.hstgr.io";
-$username = "u163031191_phpquiz";
-$password = "siddharthAa1#";
-$dbname = "u163031191_phpquiz";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "quiz";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
