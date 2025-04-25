@@ -1,8 +1,8 @@
 # Enable Rewrite Engine
 RewriteEngine on
 
-# Prevent hotlinking - Allow only wastatus.in (with and without www)
-RewriteCond %{HTTP_REFERER} !^https?://(www\.)?khaki-locust-471148\.hostingersite.com [NC]
+# Prevent hotlinking - Allow only yoururl.com (with and without www) and localhost
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?(yoururl\.com|localhost) [NC]
 RewriteCond %{HTTP_REFERER} !^$
 RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F]
 
@@ -11,8 +11,8 @@ RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F]
   Require all denied
 </FilesMatch>
 
-# Allow access only when used within wastatus.in (with and without www)
-<If "%{HTTP_REFERER} =~ m#^https?://(www\.)?khaki-locust-471148\.hostingersite.com#">
+# Allow access only when used within yoururl.com or localhost
+<If "%{HTTP_REFERER} =~ m#^https?://(www\.)?(yoururl\.com|localhost)#">
   Require all granted
 </If>
 
