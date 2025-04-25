@@ -29,6 +29,7 @@ A PHP & MySQL-based form management system for handling quiz participation regis
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/siddharthvishwamitra/quizmgphp.git
+```
 
 ## MYSQL Setup
 
