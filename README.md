@@ -1,4 +1,4 @@
-# QuizForge - Exam Management System
+# Quizforge - Exam Management System
 
 A PHP & MySQL-based form management system for handling quiz participation registrations, admit cards, and results. Designed for both participants and admins to streamline registration and management.
 
