@@ -1,4 +1,4 @@
-# Form Management – Quiz Participation System
+# QuizForge - Exam Management System
 
 A PHP & MySQL-based form management system for handling quiz participation registrations, admit cards, and results. Designed for both participants and admins to streamline registration and management.
 
@@ -28,7 +28,7 @@ A PHP & MySQL-based form management system for handling quiz participation regis
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/siddharthvishwamitra/quizmgphp.git
+git clone https://github.com/siddharthvishwamitra/quizforge.git
 ```
 
 ## MYSQL Setup
